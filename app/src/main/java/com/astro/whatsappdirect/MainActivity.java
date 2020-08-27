@@ -40,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
 
         if(ph.isEmpty()){
             phoneNumber.setError("Phone Field cannot be empty");
+
+        }else if(!ph.startsWith("+")){
+            phoneNumber.setError("Enter phone number with country code");
         }else{
             Intent sendIntent = new Intent(Intent.ACTION_VIEW);
             String msgEncoded = null;
